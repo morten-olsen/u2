@@ -1,0 +1,45 @@
+{
+  "name": "u2",
+  "version": "1.0.0-alpha.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "u2": "./bin/u2.js"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "17.0.3",
+    "@commitlint/config-conventional": "17.0.3",
+    "@react-native-community/eslint-config": "3.1.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/inquirer": "^9.0.0",
+    "@types/lodash": "^4.14.182",
+    "commitizen": "4.2.5",
+    "eslint": "8.21.0",
+    "husky": "8.0.1",
+    "prettier": "2.7.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.4.0",
+    "execa": "^5",
+    "find-up": "^5",
+    "fs-extra": "^10.1.0",
+    "globby": "^11",
+    "inquirer": "^8.2.4",
+    "lodash": "^4.17.21",
+    "ora": "^5.4.1",
+    "query-registry": "^2.5.0",
+    "simple-git": "^3.11.0",
+    "yaml": "^2.1.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "postinstall": "husky install && husky install"
+  }
+}
