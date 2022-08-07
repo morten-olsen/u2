@@ -1,10 +1,11 @@
-import { existsSync, writeFile } from 'fs-extra';
+import { existsSync, writeFile, readJsonSync, ensureDir } from 'fs-extra';
+import { dirname } from 'path';
 
-export const jsonFileProxy = async <T>(filePath: string, fallback: T) => {
+export const jsonFileProxy = <T>(filePath: string, fallback: T) => {
   let next: undefined | (() => Promise<void>);
   let running = false;
 
-  const current = existsSync(filePath) ? await import(filePath) : fallback;
+  const current = existsSync(filePath) ? readJsonSync(filePath) : fallback;
 
   const run = async () => {
     if (running) {
@@ -21,7 +22,8 @@ export const jsonFileProxy = async <T>(filePath: string, fallback: T) => {
 
   const proxy = jsonProxy(current, () => {
     next = async () => {
-      await writeFile(filePath, JSON.stringify(proxy.current, null, 2));
+      await ensureDir(dirname(filePath));
+      await writeFile(filePath, JSON.stringify(current, null, 2), 'utf-8');
     };
     run();
   });
