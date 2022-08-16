@@ -1,5 +1,5 @@
 {
-  "name": "u2",
+  "name": "@morten-olsen/u",
   "version": "1.0.0-alpha.0",
   "packageManager": "yarn@3.1.0",
   "main": "index.js",
@@ -34,12 +34,16 @@
     "simple-git": "^3.11.0",
     "yaml": "^2.1.1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
   },
   "scripts": {
-    "postinstall": "husky install && husky install"
+    "postinstall": "husky install && husky install",
+    "build": "tsc --build"
   }
 }

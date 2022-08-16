@@ -572,6 +572,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@morten-olsen/u@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@morten-olsen/u@workspace:."
+  dependencies:
+    "@commitlint/cli": 17.0.3
+    "@commitlint/config-conventional": 17.0.3
+    "@react-native-community/eslint-config": 3.1.0
+    "@types/fs-extra": ^9.0.13
+    "@types/inquirer": ^9.0.0
+    "@types/lodash": ^4.14.182
+    chalk: ^4.1.2
+    commander: ^9.4.0
+    commitizen: 4.2.5
+    env-paths: ^2
+    eslint: 8.21.0
+    execa: ^5
+    find-up: ^5
+    fs-extra: ^10.1.0
+    globby: ^11
+    husky: 8.0.1
+    inquirer: ^8.2.4
+    lodash: ^4.17.21
+    ora: ^5.4.1
+    prettier: 2.7.1
+    query-registry: ^2.5.0
+    simple-git: ^3.11.0
+    ts-node: ^10.9.1
+    typescript: ^4.7.4
+    yaml: ^2.1.1
+  bin:
+    u: ./bin/u2.js
+  languageName: unknown
+  linkType: soft
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -4257,40 +4291,6 @@ __metadata:
   checksum: 96d3030cb01143570567cb4f3a616b10df65f658f0e74e853e77a089a6a954e35c800be7db8b9bfe9a1ae05d9c2897e281359f65e4caa1caf266368e1c4febd3
   languageName: node
   linkType: hard
-
-"u2@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "u2@workspace:."
-  dependencies:
-    "@commitlint/cli": 17.0.3
-    "@commitlint/config-conventional": 17.0.3
-    "@react-native-community/eslint-config": 3.1.0
-    "@types/fs-extra": ^9.0.13
-    "@types/inquirer": ^9.0.0
-    "@types/lodash": ^4.14.182
-    chalk: ^4.1.2
-    commander: ^9.4.0
-    commitizen: 4.2.5
-    env-paths: ^2
-    eslint: 8.21.0
-    execa: ^5
-    find-up: ^5
-    fs-extra: ^10.1.0
-    globby: ^11
-    husky: 8.0.1
-    inquirer: ^8.2.4
-    lodash: ^4.17.21
-    ora: ^5.4.1
-    prettier: 2.7.1
-    query-registry: ^2.5.0
-    simple-git: ^3.11.0
-    ts-node: ^10.9.1
-    typescript: ^4.7.4
-    yaml: ^2.1.1
-  bin:
-    u2: ./bin/u2.js
-  languageName: unknown
-  linkType: soft
 
 "unbox-primitive@npm:^1.0.2":
   version: 1.0.2
