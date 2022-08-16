@@ -10,6 +10,10 @@ interface PackageJson {
   dependencies?: {
     [name: string]: string;
   };
-};
+  repositry?: {
+    type?: string;
+    url?: string;
+  };
+}
 
 export type { PackageJson };

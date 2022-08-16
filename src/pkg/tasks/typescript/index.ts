@@ -6,6 +6,9 @@ const setupTypescript: Task<any> = {
   run: async ({ project, getCurrent, isRoot }) => {
     const { root, isMonoRepo } = project;
     const current = getCurrent();
+    if (!current.get('main')) {
+      current.set('main', './bin/index.js');
+    }
     await root.addDevDependency({ name: 'typescript' });
     {
       const tsConfig = root.getFile('tsconfig.json').json;
