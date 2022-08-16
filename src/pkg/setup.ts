@@ -2,6 +2,7 @@ import { Command } from 'commander';
 import { Flow } from '.';
 import { resolve } from 'path';
 import { withGitRollback } from './git';
+import { sketchSetup } from './sketch';
 
 const setupPkg = (commander: Command) => {
   const scaffold = commander.command('scaffold <names> [location]');
@@ -14,6 +15,14 @@ const setupPkg = (commander: Command) => {
       ];
       const flow = new Flow(actualLocation, taskNames);
       await flow.run();
+    })();
+  });
+
+  const sketch = commander.command('sketch [location]');
+  sketch.action(async (location = process.cwd()) => {
+    const actualLocation = resolve(location);
+    await withGitRollback(actualLocation, async () => {
+      sketchSetup(actualLocation);
     })();
   });
 };

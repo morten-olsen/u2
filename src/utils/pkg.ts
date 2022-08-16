@@ -3,6 +3,13 @@ type PkgName = {
   name: string;
 };
 
+export const nameToString = (current: PkgName) => {
+  if (!current.scope) {
+    return current.name
+  }
+  return [current.scope, current.name].join('/');
+}
+
 export const parseName = (name: string): PkgName => {
   const [first, ...rest] = name.split('/');
   if (rest.length === 0) {
