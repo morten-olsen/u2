@@ -1,10 +1,12 @@
 {
   "name": "@morten-olsen/u",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "packageManager": "yarn@3.1.0",
   "main": "index.js",
   "license": "MIT",
-  "bin": "./bin/u2.js",
+  "bin": {
+    "u2": "./bin/u2.js"
+  },
   "devDependencies": {
     "@commitlint/cli": "17.0.3",
     "@commitlint/config-conventional": "17.0.3",
