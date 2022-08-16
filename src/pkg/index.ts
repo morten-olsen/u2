@@ -27,12 +27,12 @@ class Flow {
 
   #getTaskOptions() {
     const project = new Project(this.#location);
-    const current = this.#getCurrent(project);
+    const getCurrent = () => this.#getCurrent(project);
     const isRoot = project.root === this.#getCurrent(project);
     const spinner = ora().start();
     return {
       project,
-      current,
+      getCurrent,
       isRoot,
       cwd: this.#location,
       ask: new Ask(spinner),

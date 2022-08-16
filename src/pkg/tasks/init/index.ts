@@ -6,7 +6,8 @@ type Config = {
 
 const setupInit: Task<Config> = {
   name: 'init',
-  prepare: async ({ cwd, current, ask }) => {
+  prepare: async ({ cwd, getCurrent, ask }) => {
+    const current = getCurrent();
     if (current.location !== cwd) {
       return {
         name: ask.input('What is the name of your package?'),

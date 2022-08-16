@@ -5,7 +5,7 @@ import { Pkg } from '../project/pkg';
 type TaskOptions = {
   cwd: string;
   project: Project;
-  current: Pkg;
+  getCurrent: () => Pkg;
   isRoot: boolean;
   ask: Ask;
 };

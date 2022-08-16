@@ -3,8 +3,9 @@ import { join, relative } from 'path';
 
 const setupTypescript: Task<any> = {
   name: 'typescript',
-  run: async ({ project, current, isRoot }) => {
+  run: async ({ project, getCurrent, isRoot }) => {
     const { root, isMonoRepo } = project;
+    const current = getCurrent();
     await root.addDevDependency({ name: 'typescript' });
     {
       const tsConfig = root.getFile('tsconfig.json').json;
